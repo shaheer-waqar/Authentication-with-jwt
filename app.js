@@ -17,8 +17,15 @@ app.use(express.urlencoded({extended:true}));
 dbConnection();
 
 //routes
+app.get('/',(req,res)=>{
+    res.json({
+        message: "Welcome to the auth server",
+        error:false
+    })
+} )
 app.use("/api/user",userRouter)
 app.use("/api/",appRouter)
+
 
 //server
 app.listen(process.env.PORT || 3000,()=>{
