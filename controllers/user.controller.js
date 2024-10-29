@@ -20,7 +20,7 @@ const createUser = async (req, res) => {
     res.status(200).json({ msg: "success", data: response });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ msg: "Error creating user"});
+    return res.status(500).json({ msg: "Error creating user",error: error});
  
   }
 };
@@ -60,7 +60,7 @@ const LoginUser = async (req, res) => {
       .json({ msg: "Your sucessfully logged in", token: token });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ msg: "faild to login user"});
+    return res.status(500).json({ msg: "failed to login",error: error});
 
   }
 };
