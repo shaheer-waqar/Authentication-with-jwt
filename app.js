@@ -6,7 +6,6 @@ import appRouter from "./router/get.route.js"
 import cors from "cors"
 
 const app = express();
-app.use(cors());
 
 //env congig
 dotenv.config();
@@ -14,6 +13,7 @@ dotenv.config();
 // middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
+app.use(cors());
 
 //db conceection
 dbConnection();
